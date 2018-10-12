@@ -3516,18 +3516,14 @@ static void __ieee80211_rx_handle_packet(struct ieee80211_hw *hw,
 	
 	if (ieee80211_is_probe_req(fc)){ //added by lixuande 20180902
 		struct ieee80211_rx_status *sta = IEEE80211_SKB_RXCB(skb);
-		//printk("----probe---mac--%02x:%02x:%02x:%02x:%02x:%02x---rssi---%d---\n",
-		//	(hdr->addr2)[0],(hdr->addr2)[1],(hdr->addr2)[2],(hdr->addr2)[3],(hdr->addr2)[4],(hdr->addr2)[5],sta->signal);
 		wifi_detect detect;
 			
 		detect.subtype = 4;
 		detect.frametype = 2;
-		detect.rssi0 = (128 - sta->signal);
+		detect.rssi0 = sta->signal;
 		detect.rssi1 = sta->signal;
 		detect.rssi2 = sta->signal;
-		detect.snr0 = 0;
-		detect.snr1= 0;
-		detect.snr2= 0;
+
 
 		send_detectdata_to_user(hdr->addr2, detect);
 	}
