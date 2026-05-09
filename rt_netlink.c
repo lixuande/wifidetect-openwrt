@@ -1,8 +1,7 @@
 /*--------------------------------------------------------
- *  Copyright(C) 2018 EASTCOM-BUPT Inc.
  *
  *  Author      : even li
- *  Description : even li at ebupt.com
+ *  Description : even li 
  *  History     : 2015-06-22 Created
  *
  *   Module Name:
